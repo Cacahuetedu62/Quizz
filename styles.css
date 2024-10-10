@@ -75,4 +75,12 @@ button:hover{
     margin-top: 20px;
     font-size: 18px;
     text-align: center;    
+    transition: all 0.3s ease;
+}
+
+.excellent{
+    background-color: rgb(57, 216, 57);
+    color: white;
+    box-shadow: rgb(29, 126, 29);
+    border: 2px solid green;
 }
