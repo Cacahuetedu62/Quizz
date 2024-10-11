@@ -74,8 +74,9 @@ button:hover{
 #result{
     margin-top: 20px;
     font-size: 18px;
+    padding: 10px;
     text-align: center;    
-    transition: all 0.3s ease;
+    transition: all 1s ease;
 }
 
 .excellent{
@@ -84,3 +85,18 @@ button:hover{
     box-shadow: rgb(29, 126, 29);
     border: 2px solid green;
 }
+
+.good{
+    background-color: rgb(218, 199, 34);
+    color: white;
+    box-shadow: rgb(214, 109, 11);
+    border: 2px solid rgb(197, 76, 20);
+}
+
+.try-again{
+    background-color: rgb(248, 13, 13);
+    color: white;
+    box-shadow: rgb(252, 17, 17);
+    border: 2px solid rgb(172, 1, 1);
+}
+

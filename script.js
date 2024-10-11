@@ -33,6 +33,8 @@ callback(score)
 function handleMessage(score){
 //affiche un message en fonction du score
 const resultDiv = document.getElementById("result")
+// pour remettre le style à 0 et pouvoir avoir un style par score
+resultDiv.classList.remove("excellent","good","tray-again")
 if(score ===3){
     resultDiv.innerHTML += "<br> Excellent !"
     //ajout d'une class css pour chaque
@@ -42,7 +44,7 @@ if(score ===3){
     resultDiv.classList.add("good")
 } else if (score ===1){
     resultDiv.innerHTML += "<br> Vous pouvez mieux faire !"
-    resultDiv.classList.add("tray-again")
+    resultDiv.classList.add("try-again")
 }
 }
 
@@ -55,3 +57,42 @@ calculateScore(function(score){
     })
 })
 }
+
+//fonction pour s'inscrire
+function registerUser(){
+    const username = document.getElementById("username").value
+    const password = document.getElementById("password").value
+
+    if(username && password){
+        localStorage.setItem("username", username)
+        localStorage.setItem("password", password)
+        alert("Inscription reussie, Vous pouvez maintenant vous connecter")
+    } else {
+        alert("Veillez remplir tous les champs")
+    }
+    }
+
+    function loginUser(){
+        const username = document.getElementById("login-username").value
+        const password = document.getElementById("login-password").value
+
+        //les deux fonctions servent à récupérer les infos dans le local storage
+        const storedUsername = localStorage.getItem("username")
+        const storedPassword = localStorage.getItem("password")
+    
+        if(username === storedUsername && password === storedPassword){
+            localStorage.setItem("isAutenticated", true)
+            window.location.href="index.html"
+        } else {
+            alert("Le nom d'utilisateur ou le mot de passe est incorrect")
+        }
+        }
+    
+        //fonction pour cnaitre l'état de ma conection
+        function checkAuth(){
+            const isAutenticated = localStorage.getItem("isAutenticated")
+
+            if(isAutenticated !== "true")
+                alert("veuillez vous connecter pour accèder au quiz")
+                window.location.href ="login.html"
+        }
