@@ -1,0 +1,17 @@
+[
+    {
+        "questions" : "Quelle est la capitale de la France ?",
+        "option" : ["Paris", "Londres", "Berlin", "Madrid"],
+        "answer" : "Paris"
+    },
+    {
+        "questions" : "Quelle est la planette la plus proche de la Terre ?",
+        "option" : ["Mercure", "Venus", "Mars"],
+        "answer" : "Mercure"
+    },
+    {
+        "questions" : "Quelle est la plus grande planete du système solaire ?",
+        "option" : ["Jupiter", "Saturne", "Neptune"],
+        "answer" : "Jupiter"
+    }
+]

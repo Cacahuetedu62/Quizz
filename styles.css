@@ -100,3 +100,35 @@ button:hover{
     border: 2px solid rgb(172, 1, 1);
 }
 
+.navbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e4c7c7;
+    padding: 10px 20px;
+    color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.user-menu{
+    display: flex;
+    align-items: center;
+}
+
+#username-display{
+    margin-left: 15px;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+#logout-btn{
+    background-color: red;
+    border: none;
+    padding: 8px 12 px;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}

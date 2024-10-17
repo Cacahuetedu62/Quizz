@@ -58,41 +58,39 @@ calculateScore(function(score){
 })
 }
 
-//fonction pour s'inscrire
-function registerUser(){
-    const username = document.getElementById("username").value
-    const password = document.getElementById("password").value
+function showUserMenu(username) {
+        const usernameDisplay = document.getElementById("username-display")
+        usernameDisplay.textContent =username    
+}
 
-    if(username && password){
-        localStorage.setItem("username", username)
-        localStorage.setItem("password", password)
-        alert("Inscription reussie, Vous pouvez maintenant vous connecter")
-    } else {
-        alert("Veillez remplir tous les champs")
-    }
-    }
-
-    function loginUser(){
-        const username = document.getElementById("login-username").value
-        const password = document.getElementById("login-password").value
-
-        //les deux fonctions servent à récupérer les infos dans le local storage
+     document.addEventListener("DOMContentLoaded", function() {
         const storedUsername = localStorage.getItem("username")
-        const storedPassword = localStorage.getItem("password")
-    
-        if(username === storedUsername && password === storedPassword){
-            localStorage.setItem("isAutenticated", true)
-            window.location.href="index.html"
+        const isAutenticated = localStorage.getItem("isAutenticated")
+        if (storedUsername && isAutenticated === "true"){
+            showUserMenu(storedUsername)
+            loadQuestions()
         } else {
-            alert("Le nom d'utilisateur ou le mot de passe est incorrect")
+            window.location.href = "login.html"
         }
-        }
-    
-        //fonction pour cnaitre l'état de ma conection
-        function checkAuth(){
-            const isAutenticated = localStorage.getItem("isAutenticated")
+     })
 
-            if(isAutenticated !== "true")
-                alert("veuillez vous connecter pour accèder au quiz")
-                window.location.href ="login.html"
-        }
+document.getElementById("logout-btn").addEventListener("click", function(){
+    localStorage.removeItem("username")
+    localStorage.removeItem("password")
+    localStorage.setItem("isAutenticated", false)
+    window.location.href = "login.html"
+})
+
+let currentQuestionIndex = 0
+let questions = []
+
+async function loadQuestions() {
+    try {
+        const response = await fetch ("questions.json")
+        questions = await response.json()
+
+        console.log(questions)
+    } catch (error) {
+        console.log("ERREUR LORS DU CHARGEMENT DU TRABLEAU QUESTIONS []", error)
+    }
+}
