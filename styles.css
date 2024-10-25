@@ -132,3 +132,26 @@ button:hover{
     cursor: pointer;
     border-radius: 4px;
 }
+
+.difficulty-selection{
+    margin: 20px 0px; 
+}
+
+.hidden{
+    display: none;
+}
+
+.difficulty-button{
+    background: rgb(174, 106, 166);
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3;
+}
+
+.difficulty-button:hover{
+   background-color: aqua; 
+}

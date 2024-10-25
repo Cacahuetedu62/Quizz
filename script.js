@@ -68,7 +68,6 @@ function showUserMenu(username) {
         const isAutenticated = localStorage.getItem("isAutenticated")
         if (storedUsername && isAutenticated === "true"){
             showUserMenu(storedUsername)
-            loadQuestions()
         } else {
             window.location.href = "login.html"
         }
@@ -83,14 +82,28 @@ document.getElementById("logout-btn").addEventListener("click", function(){
 
 let currentQuestionIndex = 0
 let questions = []
+let selectedDifficulty = ""
 
-async function loadQuestions() {
+async function loadQuestions(difficulty) {
+    console.log("difficulté choisie" + difficulty)
     try {
         const response = await fetch ("questions.json")
         questions = await response.json()
 
-        console.log(questions)
+    const FilteredQuestions = questions.filter(
+        (q) => q.difficulty === difficulty)
+
+        console.log("question non filtrées" + questions)
+        console.log("question filtrées" + FilteredQuestions)
     } catch (error) {
         console.log("ERREUR LORS DU CHARGEMENT DU TRABLEAU QUESTIONS []", error)
     }
 }
+
+document.querySelectorAll(".difficulty-button").forEach((button) => {
+    button.addEventListener("click", function() {
+        const level = button.getAttribute("data-level")
+        loadQuestions(level)
+    })
+    
+})

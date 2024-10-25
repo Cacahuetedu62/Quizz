@@ -1,17 +1,115 @@
-[
-    {
-        "questions" : "Quelle est la capitale de la France ?",
-        "option" : ["Paris", "Londres", "Berlin", "Madrid"],
-        "answer" : "Paris"
-    },
-    {
-        "questions" : "Quelle est la planette la plus proche de la Terre ?",
-        "option" : ["Mercure", "Venus", "Mars"],
-        "answer" : "Mercure"
-    },
-    {
-        "questions" : "Quelle est la plus grande planete du système solaire ?",
-        "option" : ["Jupiter", "Saturne", "Neptune"],
-        "answer" : "Jupiter"
-    }
-]
+		[{
+				"questions": "Quelle est la capitale de la France ?",
+				"option": ["Paris", "Londres", "Berlin", "Madrid"],
+				"answer": "Paris",
+                "difficulty" :"facile"
+			},
+			{
+				"questions": "Quelle est la planette la plus proche de la Terre ?",
+				"option": ["Mercure", "Venus", "Mars"],
+				"answer": "Mercure",
+                "difficulty" :"facile"
+			},
+			{
+				"questions": "Quelle est la plus grande planete du système solaire ?",
+				"option": ["Jupiter", "Saturne", "Neptune"],
+				"answer": "Jupiter",
+                "difficulty" :"facile"
+			},            
+            {
+                "questions": "Quel est le plus grand océan du monde ?",
+                "option": ["Atlantique", "Pacifique", "Indien", "Arctique"],
+                "answer": "Pacifique",
+                "difficulty" :"facile"
+            },
+            {
+                "questions": "Qui a écrit 'Les Misérables' ?",
+                "option": ["Victor Hugo", "Émile Zola", "Gustave Flaubert", "Marcel Proust"],
+                "answer": "Victor Hugo",
+                "difficulty" :"facile"
+            },
+            {
+                "questions": "Quelle est la monnaie du Japon ?",
+                "option": ["Yen", "Dollar", "Euro", "Won"],
+                "answer": "Yen",
+                "difficulty" :"facile"
+            },       
+            {
+                "questions": "Quel est le plus long fleuve du monde ?",
+                "option": ["Nil", "Amazone", "Yangtsé", "Mississippi"],
+                "answer": "Amazone",
+                "difficulty" :"Moyen"
+            },
+            {
+                "questions": "Quelle est la langue la plus parlée au monde ?",
+                "option": ["Anglais", "Mandarin", "Espagnol", "Français"],
+                "answer": "Mandarin",
+                "difficulty" :"Moyen"
+            },
+            {
+                "questions": "Qui a peint la 'Mona Lisa' ?",
+                 "option": ["Vincent Van Gogh", "Pablo Picasso", "Leonard de Vinci", "Claude Monet"],
+                "answer": "Leonard de Vinci",
+                "difficulty" :"Moyen"
+            },
+            {
+                "questions": "Quel est le nom du premier empereur romain ?",
+                "option": ["Jules César", "Auguste", "Néron", "Trajan"],
+                "answer": "Auguste",
+                "difficulty" :"Difficile"
+            },
+            {
+                "questions": "Quelle est la théorie de la relativité développée par Albert Einstein ?",
+                "option": ["Relativité restreinte", "Relativité générale", "Mécanique quantique", "Théorie des cordes"],
+                "answer": "Relativité générale",
+                "difficulty" :"Difficile"
+            },
+            {
+                "questions": "Quel est l'élément chimique dont le symbole est 'Au' ?",
+                "option": ["Argent", "Aluminium", "Or", "Uranium"],
+                 "answer": "Or",
+                "difficulty" :"Difficile"
+            },
+            {
+                "questions": "Quelle œuvre est considérée comme le chef-d'œuvre de Miguel de Cervantes ?",
+                "option": ["Don Quichotte", "La Celestina", "Le Lazzi", "Les Nouvelles"],
+                "answer": "Don Quichotte",
+                "difficulty" :"Difficile"
+            },
+            {
+                "questions": "Quel mouvement artistique a été fondé par Claude Monet ?",
+                "option": ["Cubisme", "Surréalisme", "Impressionnisme", "Futurisme"],
+                "answer": "Impressionnisme",
+                "difficulty" :"Difficile"
+            },
+            {
+                "questions": "Quel est le plus grand désert chaud du monde ?",
+                "option": ["Sahara", "Gobi", "Kalahari", "Atacama"],
+                "answer": "Sahara",
+                "difficulty" :"Difficile"
+            },
+            {
+                "questions": "Qui a écrit 'À la recherche du temps perdu' ?",
+                "option": ["Marcel Proust", "François Mauriac", "Albert Camus", "Gustave Flaubert"],
+                "answer": "Marcel Proust",
+                "difficulty" :"Difficile"
+            },
+            {
+                "questions": "Quelle est la capitale de l'Islande ?",
+                 "option": ["Reykjavik", "Oslo", "Helsinki", "Copenhague"],
+                 "answer": "Reykjavik",
+                "difficulty" :"Difficile"
+            },
+            {
+                "questions": "Quel philosophe est connu pour sa citation 'Je pense, donc je suis' ?",
+                "option": ["Descartes", "Kant", "Hegel", "Nietzsche"],
+                "answer": "Descartes",
+                "difficulty" :"Difficile"
+            },
+            {
+                "questions": "Quel est le nom du traité qui a mis fin à la Première Guerre mondiale ?",
+                "option": ["Traité de Versailles", "Traité de Trianon", "Traité de Saint-Germain", "Traité de Paris"],
+                "answer": "Traité de Versailles",
+                "difficulty" :"Difficile"
+            }
+        ]
