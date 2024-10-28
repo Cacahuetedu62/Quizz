@@ -92,11 +92,24 @@ async function loadQuestions(difficulty) {
 
     const FilteredQuestions = questions.filter(
         (q) => q.difficulty === difficulty)
+        selectedDifficulty = difficulty
+        let currentQuestionIndex = 0
 
-        console.log("question non filtrées" + questions)
-        console.log("question filtrées" + FilteredQuestions)
+        starQuiz()
     } catch (error) {
         console.log("ERREUR LORS DU CHARGEMENT DU TRABLEAU QUESTIONS []", error)
+    }
+}
+function starQuiz() {
+    document.querySelector(".difficulty-selection").classList.add("hidden")
+    document.getElementById("quiz-container").classList.remove("hidden")    
+    showQuestion()
+}
+
+function showQuestion() {
+    if(currentQuestionIndex < questions.length) {
+        const questionData = questions[currentQuestionIndex]
+        console.log("questions data" + questionData)
     }
 }
 
