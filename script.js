@@ -1,11 +1,59 @@
-function calculateScore(callback){
+
+    let currentQuestionIndex = 0
+    let questions = []
+    let selectedDifficulty = ""
     
+    async function loadQuestions(difficulty) {
+        try{
+            const response = await fetch ("questions.json")
+            const AllQuestions = await response.json()
+    
+            questions = AllQuestions.filter(
+            (q) => q.difficulty === difficulty)
+            selectedDifficulty = difficulty
+            let currentQuestionIndex = 0
+    
+            starQuiz()
+        } catch (error) {
+            console.log("ERREUR LORS DU CHARGEMENT DU TRABLEAU QUESTIONS []", error)
+    }  
+}
+
+
+        function starQuiz() {
+            document.querySelector(".difficulty-selection").classList.add("hidden")
+            document.getElementById("quiz-container").classList.remove("hidden")    
+            showQuestion()
+        }
+
+        function showQuestion() {
+            if(currentQuestionIndex < questions.length) { 
+                console.log(questions)
+                const questionData = questions[currentQuestionIndex]
+                console.log("question data" + questionData)
+                const questionContainer = document.getElementById("quiz-container")
+                questionContainer.innerHTML=`
+                
+
+                <div class="question">
+                <p>$(questionData.questions)<p/>
+                </div>
+
+                `
+    
+            }
+        }
+
+
+
+
     // calculateScore => CALCUL création de la variable qui va déclarer les réponces correctes
+   function calculateScore(callback){ 
     const correctAnswers = {
         q1: "Paris",
         q2: "Mercure",
         q3: "Jupiter",
-    }
+    }    
     
     // création de la variable qui va récupérer le formulaire id="quiz-form"    
     const form = document.getElementById("quiz-form")
@@ -20,13 +68,12 @@ function calculateScore(callback){
     score++
     }}
     
-    callback(score)
-}
+    callback(score)}
 
 function displayResult(score, callback){
 //displayResult => AFFICHE recuperation du score : OK
 const resultDiv = document.getElementById("result")
-resultDiv.innerHTML = `Votre score est de ${score}`    
+resultDiv.innerHTML = `Votre score est de ${score} sur 3.`  
 callback(score)
 }
 
@@ -80,38 +127,6 @@ document.getElementById("logout-btn").addEventListener("click", function(){
     window.location.href = "login.html"
 })
 
-let currentQuestionIndex = 0
-let questions = []
-let selectedDifficulty = ""
-
-async function loadQuestions(difficulty) {
-    console.log("difficulté choisie" + difficulty)
-    try {
-        const response = await fetch ("questions.json")
-        questions = await response.json()
-
-    const FilteredQuestions = questions.filter(
-        (q) => q.difficulty === difficulty)
-        selectedDifficulty = difficulty
-        let currentQuestionIndex = 0
-
-        starQuiz()
-    } catch (error) {
-        console.log("ERREUR LORS DU CHARGEMENT DU TRABLEAU QUESTIONS []", error)
-    }
-}
-function starQuiz() {
-    document.querySelector(".difficulty-selection").classList.add("hidden")
-    document.getElementById("quiz-container").classList.remove("hidden")    
-    showQuestion()
-}
-
-function showQuestion() {
-    if(currentQuestionIndex < questions.length) {
-        const questionData = questions[currentQuestionIndex]
-        console.log("questions data" + questionData)
-    }
-}
 
 document.querySelectorAll(".difficulty-button").forEach((button) => {
     button.addEventListener("click", function() {
