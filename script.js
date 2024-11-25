@@ -29,18 +29,24 @@
         function showQuestion() {
             if(currentQuestionIndex < questions.length) { 
                 console.log(questions)
+
                 const questionData = questions[currentQuestionIndex]
                 console.log("question data" + questionData)
                 const questionContainer = document.getElementById("quiz-container")
-                questionContainer.innerHTML=`
-                
 
+                questionContainer.innerHTML=`           
                 <div class="question">
-                <p>$(questionData.questions)<p/>
+                <p>${questionData.questions}<p/>
                 </div>
-
-                `
-    
+                <form id="quiz-form">
+                ${questionData.option
+                .map((option, index) =>
+                `<label type="radio" name="answer" value="${option}">${option}</label>`)
+                .join("")}
+<button type="button" onClick="submitAnswers()"> Soumettre </button>
+</form>
+                
+                `    
             }
         }
 
@@ -121,8 +127,8 @@ function showUserMenu(username) {
      })
 
 document.getElementById("logout-btn").addEventListener("click", function(){
-    localStorage.removeItem("username")
-    localStorage.removeItem("password")
+    // localStorage.removeItem("username")
+    // localStorage.removeItem("password")
     localStorage.setItem("isAutenticated", false)
     window.location.href = "login.html"
 })
